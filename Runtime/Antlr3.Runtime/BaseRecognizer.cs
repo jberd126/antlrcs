@@ -40,7 +40,7 @@ namespace Antlr.Runtime
     using Regex = System.Text.RegularExpressions.Regex;
     using TextWriter = System.IO.TextWriter;
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
     using ArgumentNullException = System.ArgumentNullException;
     using MethodBase = System.Reflection.MethodBase;
     using StackFrame = System.Diagnostics.StackFrame;
@@ -831,7 +831,7 @@ namespace Antlr.Runtime
             state._fsp--;
         }
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
         /** <summary>
          *  Return <see cref="IList{T}"/> of the rules in your parser instance
          *  leading up to a call to this method.  You could override if

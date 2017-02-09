@@ -43,7 +43,9 @@ namespace Antlr.Runtime.Tree
             _tree = tree;
         }
 
+#if !NETCF
         [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
+#endif
         public ITree[] Children
         {
             get

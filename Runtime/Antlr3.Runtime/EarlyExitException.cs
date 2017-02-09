@@ -35,7 +35,7 @@ namespace Antlr.Runtime
     using ArgumentNullException = System.ArgumentNullException;
     using Exception = System.Exception;
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
     using SecurityCriticalAttribute = System.Security.SecurityCriticalAttribute;
     using SerializationInfo = System.Runtime.Serialization.SerializationInfo;
     using StreamingContext = System.Runtime.Serialization.StreamingContext;
@@ -79,7 +79,7 @@ namespace Antlr.Runtime
             this._decisionNumber = decisionNumber;
         }
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
         protected EarlyExitException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
@@ -98,7 +98,7 @@ namespace Antlr.Runtime
             }
         }
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
         [SecurityCritical]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {

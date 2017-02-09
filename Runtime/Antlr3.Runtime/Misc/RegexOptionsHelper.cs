@@ -12,7 +12,7 @@
 
         static RegexOptionsHelper()
         {
-#if !PORTABLE
+#if !PORTABLE || NETCF
             Compiled = RegexOptions.Compiled;
 #else
             if (!Enum.TryParse("Compiled", out Compiled))

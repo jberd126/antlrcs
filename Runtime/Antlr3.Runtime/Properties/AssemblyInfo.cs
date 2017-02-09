@@ -50,7 +50,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 [assembly: CLSCompliant( true )]
+#if !NETCF
 [assembly: AllowPartiallyTrustedCallers]
+#endif
 
 #if !PORTABLE
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -74,5 +76,7 @@ using System.Runtime.InteropServices;
  *   3. Revision is the Perforce changelist number associated with the release.
  */
 [assembly: AssemblyVersion("3.5.0.2")]
+#if !NETCF
 [assembly: AssemblyFileVersion("3.5.2.0")]
+#endif
 [assembly: AssemblyInformationalVersion("3.5.2-dev")]

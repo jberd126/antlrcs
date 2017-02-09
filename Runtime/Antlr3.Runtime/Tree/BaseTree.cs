@@ -46,7 +46,9 @@ namespace Antlr.Runtime.Tree
      *  </summary>
      */
     [System.Serializable]
+#if !NETCF
     [System.Diagnostics.DebuggerTypeProxy(typeof(AntlrRuntime_BaseTreeDebugView))]
+#endif
     public abstract class BaseTree : ITree
     {
         private IList<ITree> _children;

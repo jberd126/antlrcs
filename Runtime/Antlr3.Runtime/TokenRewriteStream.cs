@@ -36,7 +36,9 @@ namespace Antlr.Runtime
 
     using ArgumentException = System.ArgumentException;
     using Math = System.Math;
+#if !NETCF
     using DebuggerDisplay = System.Diagnostics.DebuggerDisplayAttribute;
+#endif
     using Exception = System.Exception;
     using StringBuilder = System.Text.StringBuilder;
     using Type = System.Type;
@@ -97,7 +99,9 @@ namespace Antlr.Runtime
      *  the first example shows.
      */
     [System.Serializable]
+#if !NETCF
     [DebuggerDisplay( "TODO: TokenRewriteStream debugger display" )]
+#endif
     public class TokenRewriteStream : CommonTokenStream
     {
         public const string DEFAULT_PROGRAM_NAME = "default";

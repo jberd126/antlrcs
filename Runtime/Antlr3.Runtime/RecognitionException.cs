@@ -38,7 +38,7 @@ namespace Antlr.Runtime
     using Exception = System.Exception;
     using NotSupportedException = System.NotSupportedException;
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
     using SecurityCriticalAttribute = System.Security.SecurityCriticalAttribute;
     using SerializationInfo = System.Runtime.Serialization.SerializationInfo;
     using StreamingContext = System.Runtime.Serialization.StreamingContext;
@@ -219,7 +219,7 @@ namespace Antlr.Runtime
             }
         }
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
         protected RecognitionException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
@@ -359,7 +359,7 @@ namespace Antlr.Runtime
             }
         }
 
-#if !PORTABLE
+#if !PORTABLE && !NETCF
         [SecurityCritical]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
